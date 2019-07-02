@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  # db:
+  #   image: postgres
+  NotifyApp:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./NotifyApp:/NotifyApp
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - db
